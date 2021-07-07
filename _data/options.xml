@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="ap_actlong_maxposts" edit_format="spinbox" data_type="string">
+    <default_value>100</default_value>
+    <relation group_id="ap_actlong" display_order="1"/>
+  </option>
+  <option option_id="ap_actlong_show_postbit" edit_format="onoff" data_type="string">
+    <default_value>1</default_value>
+    <relation group_id="ap_actlong" display_order="2"/>
+  </option>
+  <option option_id="ap_actlong_show_profile" edit_format="onoff" data_type="string">
+    <default_value>1</default_value>
+    <relation group_id="ap_actlong" display_order="3"/>
+  </option>
+</options>

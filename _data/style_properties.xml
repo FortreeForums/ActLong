@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style_properties>
+  <style_property property_name="ap_progress_bar_bg" group_name="ap_actlong" title="Progress bar background" description="Change the background color for daily goal progress bars." property_type="value" value_type="color" display_order="0">
+    <value>"@xf-paletteAccent1"</value>
+  </style_property>
+  <style_property property_name="ap_progress_bar_color" group_name="ap_actlong" title="Progress bar color" description="Change the color for daily goal progress bars." property_type="value" value_type="color" display_order="0">
+    <value>"@xf-paletteAccent2"</value>
+  </style_property>
+</style_properties>
