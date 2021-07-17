@@ -7,7 +7,9 @@ class Activity
 	public static function resetActivityMeter()
 	{
 		$finder = \XF::finder('XF:User');
-		$users = $finder->where('user_state', 'valid')->fetch();
+		$users = $finder->where('user_state', 'valid')
+				->where('ap_activity_meter', '>=', 1)
+				->fetch();
 		
 		foreach($users as $user)
 		{
