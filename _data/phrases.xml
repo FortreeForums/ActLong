@@ -3,9 +3,11 @@
   <phrase title="ap_activity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Activity]]></phrase>
   <phrase title="ap_longevity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Longevity]]></phrase>
   <phrase title="cron_entry.ap_activity_reset" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters: Reset activity meters]]></phrase>
+  <phrase title="option.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[Exclude nodes from activity count]]></phrase>
   <phrase title="option.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Maximum posts]]></phrase>
   <phrase title="option.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in postbit]]></phrase>
   <phrase title="option.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in profile]]></phrase>
+  <phrase title="option_explain.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[If you would like to exclude boards from counting towards users' activity meters, you can select them here.]]></phrase>
   <phrase title="option_explain.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You can specify the total number of posts required to fill the activity bar to 100% here.]]></phrase>
   <phrase title="option_explain.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
   <phrase title="option_explain.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
