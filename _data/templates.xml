@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
-  <template type="public" title="ap_actlong_meters" version_id="1000170" version_string="1.0.1"><![CDATA[<!-- Activity Meter //-->
+  <template type="public" title="ap_actlong_meters" version_id="1000270" version_string="1.0.2"><![CDATA[<!-- Activity Meter //-->
 <xf:set var="$activity" value="{{ $user.ap_activity_meter / $xf.options.ap_actlong_maxposts }}" />
 <xf:set var="$activity_percentage" value="{{ $activity * 100 }}" />
-<xf:set var="$activityTooltip" value="{{ phrase('ap_ss_user_has_completed') }} {{ floor($activity_percentage) }}% of {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {$xf.options.ap_actlong_timeframe}" />
+<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% of {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {$xf.options.ap_actlong_timeframe}" />
 <dl class="pairs pairs--justified">
 	<dt class="ap-activity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_activity') }}</dt>	
 		<span title="{$activityTooltip}" class="block--progress">

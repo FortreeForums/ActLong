@@ -4,6 +4,7 @@
   <phrase title="ap_actlong_of_the_forums_lifetime" version_id="1000170" version_string="1.0.1"><![CDATA[of the forums lifetime]]></phrase>
   <phrase title="ap_actlong_posts_in_the_last" version_id="1000170" version_string="1.0.1"><![CDATA[posts in the last]]></phrase>
   <phrase title="ap_actlong_user_has_been_registered" version_id="1000170" version_string="1.0.1"><![CDATA[User has been registered for]]></phrase>
+  <phrase title="ap_actlong_user_has_completed" version_id="1000270" version_string="1.0.2"><![CDATA[User has completed]]></phrase>
   <phrase title="ap_longevity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Longevity]]></phrase>
   <phrase title="ap_week" version_id="1000170" version_string="1.0.1"><![CDATA[Week]]></phrase>
   <phrase title="cron_entry.ap_activity_reset" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters: Reset activity meters]]></phrase>
