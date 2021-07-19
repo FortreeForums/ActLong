@@ -4,7 +4,7 @@
     <default_value>[]</default_value>
     <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
     <sub_options>*</sub_options>
-    <relation group_id="ap_actlong" display_order="4"/>
+    <relation group_id="ap_actlong" display_order="5"/>
   </option>
   <option option_id="ap_actlong_maxposts" edit_format="spinbox" data_type="string">
     <default_value>100</default_value>
@@ -17,5 +17,13 @@
   <option option_id="ap_actlong_show_profile" edit_format="onoff" data_type="string">
     <default_value>1</default_value>
     <relation group_id="ap_actlong" display_order="3"/>
+  </option>
+  <option option_id="ap_actlong_timeframe" edit_format="radio" data_type="string">
+    <default_value>week</default_value>
+    <edit_format_params>day={{ phrase('day') }}
+week={{ phrase('ap_week') }}
+month={{ phrase('month') }}
+year={{ phrase('year') }}</edit_format_params>
+    <relation group_id="ap_actlong" display_order="4"/>
   </option>
 </options>

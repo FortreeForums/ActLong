@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
   <phrase title="ap_activity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Activity]]></phrase>
+  <phrase title="ap_actlong_of_the_forums_lifetime" version_id="1000170" version_string="1.0.1"><![CDATA[of the forums lifetime]]></phrase>
+  <phrase title="ap_actlong_posts_in_the_last" version_id="1000170" version_string="1.0.1"><![CDATA[posts in the last]]></phrase>
+  <phrase title="ap_actlong_user_has_been_registered" version_id="1000170" version_string="1.0.1"><![CDATA[User has been registered for]]></phrase>
   <phrase title="ap_longevity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Longevity]]></phrase>
+  <phrase title="ap_week" version_id="1000170" version_string="1.0.1"><![CDATA[Week]]></phrase>
   <phrase title="cron_entry.ap_activity_reset" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters: Reset activity meters]]></phrase>
   <phrase title="option.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[Exclude nodes from activity count]]></phrase>
   <phrase title="option.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Maximum posts]]></phrase>
   <phrase title="option.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in postbit]]></phrase>
   <phrase title="option.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in profile]]></phrase>
+  <phrase title="option.ap_actlong_timeframe" version_id="1000170" version_string="1.0.1"><![CDATA[Timeframe to display in tooltip]]></phrase>
   <phrase title="option_explain.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[If you would like to exclude boards from counting towards users' activity meters, you can select them here.]]></phrase>
   <phrase title="option_explain.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You can specify the total number of posts required to fill the activity bar to 100% here.]]></phrase>
   <phrase title="option_explain.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
   <phrase title="option_explain.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.ap_actlong_timeframe" version_id="1000170" version_string="1.0.1"><![CDATA[You can choose which timeframe to display in the activity meters tooltip here.<br />
+<b>Note:</b> Remember to change the relevant cron job's timer if you set this to anything other than a week!]]></phrase>
   <phrase title="option_group.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters]]></phrase>
   <phrase title="option_group_description.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Configuration panel for the Activity/Longevity Meters addon by apathy.]]></phrase>
   <phrase title="style_prop.ap_progress_bar_bg" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Progress bar background]]></phrase>
