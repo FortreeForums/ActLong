@@ -4,6 +4,7 @@
     <find><![CDATA[<xf:userblurb user="$user" tag="div" class="memberHeader-blurb" />]]></find>
     <replace><![CDATA[$0
 <xf:if is="$xf.options.ap_actlong_show_profile">
+	<xf:css src="ap_actlong_progress_bar.less" />
 	<xf:include template="ap_actlong_meters" />
 </xf:if>]]></replace>
   </modification>
