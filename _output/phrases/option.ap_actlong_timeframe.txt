@@ -1,1 +1,0 @@
-Timeframe to display in tooltip

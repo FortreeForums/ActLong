@@ -1,1 +1,0 @@
-Exclude nodes from activity count
