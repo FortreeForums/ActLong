@@ -1,0 +1,9 @@
+{
+    "template": "member_view",
+    "description": "Adds the activity & longevity meters to profiles",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:userblurb user=\"$user\" tag=\"div\" class=\"memberHeader-blurb\" />",
+    "replace": "$0\n<xf:if is=\"$xf.options.ap_actlong_show_profile\">\n\t<xf:css src=\"ap_actlong_progress_bar.less\" />\n\t<xf:include template=\"ap_actlong_meters\" />\n</xf:if>"
+}

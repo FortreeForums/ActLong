@@ -1,0 +1,30 @@
+<!-- Activity Meter //-->
+<xf:set var="$activity" value="{{ $user.ap_activity_meter / $xf.options.ap_actlong_maxposts }}" />
+<xf:set var="$activity_percentage" value="{{ $activity * 100 }}" />
+<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% of {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {$xf.options.ap_actlong_timeframe}" />
+<dl class="pairs pairs--justified">
+	<dt class="ap-activity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_activity') }}</dt>	
+		<span title="{$activityTooltip}" class="block--progress">
+			<div class="progress-bar">
+				<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;">
+					<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
+				</div>
+			</div>
+		</span>	
+</dl>
+
+<!-- Longevity Meter //-->
+<xf:set var="$forum_start" value="{{$xf.time - $xf.simpleCache.getSet('apathy/ActLong').forum_start }}" />
+<xf:set var="$user_date" value="{{($xf.time - {$user.register_date})}}" />
+<xf:set var="$longevity_percentage" value="{{ ($user_date / $forum_start) * 100 }}" />
+<xf:set var="$longevityTooltip" value="{{ phrase('ap_actlong_user_has_been_registered') }} {{ floor($longevity_percentage|number(2)) }}% {{ phrase('ap_actlong_of_the_forums_lifetime') }}" />
+<dl class="pairs pairs--justified">
+	<dt class="ap-longevity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_longevity') }}</dt>
+		<span title="{$longevityTooltip}" class="block--progress">
+			<div class="progress-bar">
+				<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;">
+					<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
+				</div>
+			</div>
+		</span>
+</dl>

@@ -1,0 +1,9 @@
+{
+    "template": "thread_view",
+    "description": "Calls to the progress bar CSS",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "<xf:title(.*)>",
+    "replace": "$0\n<xf:css src=\"ap_actlong_progress_bar.less\" />"
+}

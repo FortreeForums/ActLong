@@ -1,0 +1,2 @@
+You can choose which timeframe to display in the activity meters tooltip here.<br />
+<b>Note:</b> Remember to change the relevant cron job's timer if you set this to anything other than a week!
