@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
-  <phrase title="option.ap_bbcode_check" version_id="1010070" version_string="1.1.0"><![CDATA[BBCode]]></phrase>
-  <phrase title="option.ap_char_limit" version_id="1000000" version_string="1.0.0"><![CDATA[Character count]]></phrase>
-  <phrase title="option.ap_minchars_exclude_nodes" version_id="1010170" version_string="1.1.1"><![CDATA[Exclude nodes from check]]></phrase>
-  <phrase title="option.ap_minchars_exclude_users" version_id="1010270" version_string="1.1.2"><![CDATA[Exclude users from check]]></phrase>
-  <phrase title="option.ap_newline_check" version_id="1010070" version_string="1.1.0"><![CDATA[Linebreaks]]></phrase>
-  <phrase title="option.ap_quote_check" version_id="1010070" version_string="1.1.0"><![CDATA[Quoted text]]></phrase>
-  <phrase title="option.ap_url_check" version_id="1010070" version_string="1.1.0"><![CDATA[URLs]]></phrase>
-  <phrase title="option_explain.ap_bbcode_check" version_id="1010070" version_string="1.1.0"><![CDATA[Check this if you would like to exclude BBCode tags from counting towards the check]]></phrase>
-  <phrase title="option_explain.ap_char_limit" version_id="1000000" version_string="1.0.0"><![CDATA[You can specify the desired character count here. Enter <b>0</b> to disable.]]></phrase>
-  <phrase title="option_explain.ap_minchars_exclude_nodes" version_id="1010170" version_string="1.1.1"><![CDATA[If you would like to exclude boards from counting towards the character check, you can select them here.]]></phrase>
-  <phrase title="option_explain.ap_minchars_exclude_users" version_id="1010270" version_string="1.1.2"><![CDATA[You can input user IDs here in a comma-separated format to exclude them from being checked.]]></phrase>
-  <phrase title="option_explain.ap_newline_check" version_id="1010070" version_string="1.1.0"><![CDATA[Check this if you would like to exclude linebreaks from counting towards the check.]]></phrase>
-  <phrase title="option_explain.ap_quote_check" version_id="1010070" version_string="1.1.0"><![CDATA[Check this if you would like to exclude text within [quote] tags from counting towards the check]]></phrase>
-  <phrase title="option_explain.ap_url_check" version_id="1010070" version_string="1.1.0"><![CDATA[Check this if you would like to exclude URLs from counting towards the check]]></phrase>
-  <phrase title="option_group.ap_min_chars" version_id="1000000" version_string="1.0.0"><![CDATA[[AP] Minimum Characters for Post Count]]></phrase>
-  <phrase title="option_group_description.ap_min_chars" version_id="1000000" version_string="1.0.0"><![CDATA[Settings for the Minimum Characters for Post Count addon by apathy.]]></phrase>
+  <phrase title="ap_activity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Activity]]></phrase>
+  <phrase title="ap_actlong_of_the_forums_lifetime" version_id="1000170" version_string="1.0.1"><![CDATA[of the forums lifetime]]></phrase>
+  <phrase title="ap_actlong_posts_in_the_last" version_id="1000170" version_string="1.0.1"><![CDATA[posts in the last]]></phrase>
+  <phrase title="ap_actlong_user_has_been_registered" version_id="1000170" version_string="1.0.1"><![CDATA[User has been registered for]]></phrase>
+  <phrase title="ap_actlong_user_has_completed" version_id="1000270" version_string="1.0.2"><![CDATA[User has completed]]></phrase>
+  <phrase title="ap_longevity" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Longevity]]></phrase>
+  <phrase title="ap_week" version_id="1000170" version_string="1.0.1"><![CDATA[Week]]></phrase>
+  <phrase title="cron_entry.ap_activity_reset" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters: Reset activity meters]]></phrase>
+  <phrase title="option.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[Exclude nodes from activity count]]></phrase>
+  <phrase title="option.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Maximum posts]]></phrase>
+  <phrase title="option.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in postbit]]></phrase>
+  <phrase title="option.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show meters in profile]]></phrase>
+  <phrase title="option.ap_actlong_timeframe" version_id="1000170" version_string="1.0.1"><![CDATA[Timeframe to display in tooltip]]></phrase>
+  <phrase title="option_explain.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[If you would like to exclude boards from counting towards users' activity meters, you can select them here.]]></phrase>
+  <phrase title="option_explain.ap_actlong_maxposts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You can specify the total number of posts required to fill the activity bar to 100% here.]]></phrase>
+  <phrase title="option_explain.ap_actlong_show_postbit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.ap_actlong_show_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.ap_actlong_timeframe" version_id="1000170" version_string="1.0.1"><![CDATA[You can choose which timeframe to display in the activity meters tooltip here.<br />
+<b>Note:</b> Remember to change the relevant cron job's timer if you set this to anything other than a week!]]></phrase>
+  <phrase title="option_group.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters]]></phrase>
+  <phrase title="option_group_description.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Configuration panel for the Activity/Longevity Meters addon by apathy.]]></phrase>
+  <phrase title="style_prop.ap_progress_bar_bg" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Progress bar background]]></phrase>
+  <phrase title="style_prop.ap_progress_bar_color" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Progress bar color]]></phrase>
+  <phrase title="style_prop_desc.ap_progress_bar_bg" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Change the background color for daily goal progress bars.]]></phrase>
+  <phrase title="style_prop_desc.ap_progress_bar_color" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Change the color for daily goal progress bars.]]></phrase>
+  <phrase title="style_prop_group.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters]]></phrase>
+  <phrase title="style_prop_group_desc.ap_actlong" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Style properties for the Activity/Longevity Meters addon by apathy]]></phrase>
 </phrases>

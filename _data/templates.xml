@@ -1,2 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<templates/>
+<templates>
+  <template type="public" title="ap_actlong_meters" version_id="1000270" version_string="1.0.2"><![CDATA[<!-- Activity Meter //-->
+<xf:set var="$activity" value="{{ $user.ap_activity_meter / $xf.options.ap_actlong_maxposts }}" />
+<xf:set var="$activity_percentage" value="{{ $activity * 100 }}" />
+<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% of {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {$xf.options.ap_actlong_timeframe}" />
+<dl class="pairs pairs--justified">
+	<dt class="ap-activity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_activity') }}</dt>	
+		<span title="{$activityTooltip}" class="block--progress">
+			<div class="progress-bar">
+				<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;">
+					<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
+				</div>
+			</div>
+		</span>	
+</dl>
+
+<!-- Longevity Meter //-->
+<xf:set var="$forum_start" value="{{$xf.time - $xf.simpleCache.getSet('apathy/ActLong').forum_start }}" />
+<xf:set var="$user_date" value="{{($xf.time - {$user.register_date})}}" />
+<xf:set var="$longevity_percentage" value="{{ ($user_date / $forum_start) * 100 }}" />
+<xf:set var="$longevityTooltip" value="{{ phrase('ap_actlong_user_has_been_registered') }} {{ floor($longevity_percentage|number(2)) }}% {{ phrase('ap_actlong_of_the_forums_lifetime') }}" />
+<dl class="pairs pairs--justified">
+	<dt class="ap-longevity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_longevity') }}</dt>
+		<span title="{$longevityTooltip}" class="block--progress">
+			<div class="progress-bar">
+				<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;">
+					<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
+				</div>
+			</div>
+		</span>
+</dl>]]></template>
+  <template type="public" title="ap_actlong_progress_bar.less" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[/* From Russ on Xenforo
+   https://xenforo.com/community/threads/does-this-add-on-exist-profile-progression.168788/#post-1368520 */
+
+.block--progress
+{
+    .progress-bar
+    {
+        margin-bottom: @xf-paddingLarge;
+        width:100%;
+        height:30px;
+        overflow:hidden;
+        background: {{ property('ap_progress_bar_bg') }} !important;
+        border-radius: @xf-borderRadiusLarge;
+    }
+    .progress-width
+    {
+        position:relative;
+        float:left;
+        height:100%;
+        background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.125) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.125) 50%, rgba(255, 255, 255, 0.125) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+        background-size: 35px 35px;
+        background-color: {{ property('ap_progress_bar_color') }} !important;
+    }
+    .progress-percent
+    {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        margin:0;
+        color:white;
+        text-shadow: 0 0 1px #000000;
+    }
+    .progress-complete
+    {
+        text-decoration: line-through;
+    }
+    .progress-footer
+    {
+        margin-top: @xf-paddingLarge;
+    }
+}
+
+[data-template="member_view"] {
+    .progress-bar
+    {
+        margin-bottom: @xf-paddingLarge;
+        width:45%;
+        height:18px;
+        overflow:hidden;
+        background: {{ property('ap_progress_bar_bg') }} !important;
+        border-radius: @xf-borderRadiusLarge;
+    }
+
+	.ap-activity {
+		padding-right: 17px;	
+	}
+}]]></template>
+</templates>
