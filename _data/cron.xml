@@ -1,4 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cron>
-  <entry entry_id="ap_activity_reset" cron_class="apathy\ActLong\Cron\Activity" cron_method="resetActivityMeter" active="1"><![CDATA[{"day_type":"dow","dow":[1],"hours":[0],"minutes":[0]}]]></entry>
-</cron>
+<cron/>

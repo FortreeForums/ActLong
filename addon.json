@@ -1,13 +1,13 @@
 {
     "legacy_addon_id": "",
-    "title": "[AP] Activity/Longevity Meters",
-    "description": "Adds activity/longevity meters to the postbit.",
-    "version_id": 1000370,
-    "version_string": "1.0.3",
+    "title": "[AP] Minimum Characters for Post Count",
+    "description": "Only increases post count if the message length is greater than certain number.",
+    "version_id": 1010270,
+    "version_string": "1.1.2",
     "dev": "apathy",
     "dev_url": "https://fortreeforums.xyz/",
     "faq_url": "",
-    "support_url": "https://fortreeforums.xyz/threads/ap-activity-longevity-meters.1539/",
+    "support_url": "https://fortreeforums.xyz/threads/ap-minimum-characters-for-post-count.1331/",
     "extra_urls": [],
     "require": [],
     "icon": "icon.png"
