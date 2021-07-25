@@ -1,35 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
-  <template type="public" title="ap_actlong_meters" version_id="1000270" version_string="1.0.2"><![CDATA[<!-- Activity Meter //-->
-<xf:set var="$activity" value="{{ $user.ap_activity_meter / $xf.options.ap_actlong_maxposts }}" />
-<xf:set var="$activity_percentage" value="{{ $activity * 100 }}" />
-<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% of {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {$xf.options.ap_actlong_timeframe}" />
-<dl class="pairs pairs--justified">
-	<dt class="ap-activity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_activity') }}</dt>	
-		<span title="{$activityTooltip}" class="block--progress">
-			<div class="progress-bar">
-				<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;">
-					<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
+  <template type="public" title="ap_actlong_meters" version_id="1000470" version_string="1.0.4"><![CDATA[<xf:if is="!$xf.options.ap_actlong_disable_activity">
+	<xf:set var="$addon" value="apathy/StyleSuite" />
+	<!-- Activity Meter //-->
+	<xf:set var="$activity" value="{{ $user.ap_activity_meter / $xf.options.ap_actlong_maxposts }}" />
+	<xf:set var="$activity_percentage" value="{{ $activity * 100 }}" />
+	
+	<xf:if is="$xf.options.ap_actlong_timeframe == 'day'">
+		<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% {{ phrase('ap_actlong_of') }} {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {{ phrase('day') }}" />
+	<xf:elseif is="$xf.options.ap_actlong_timeframe == 'week'" />
+		<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% {{ phrase('ap_actlong_of') }} {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {{ phrase('ap_lweek') }}" />
+	<xf:elseif is="$xf.options.ap_actlong_timeframe == 'month'" />
+		<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% {{ phrase('ap_actlong_of') }} {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {{ phrase('month') }}" />
+	<xf:elseif is="$xf.options.ap_actlong_timeframe == 'year'" />
+		<xf:set var="$activityTooltip" value="{{ phrase('ap_actlong_user_has_completed') }} {{ floor($activity_percentage) }}% {{ phrase('ap_actlong_of') }} {$xf.options.ap_actlong_maxposts} {{ phrase('ap_actlong_posts_in_the_last') }} {{ phrase('year') }}" />
+	</xf:if>
+		
+	<dl class="pairs pairs--justified">
+		<xf:if is="{$xf.addOns.{$addon}}">
+			<dt class="ap-activity" style="{{ $xf.options.ap_disable_postbit_styles ? '' : ($xf.visitor.ap_postbit_style.pbit_disable ? '' : ($user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '')) }}
+										   {{ $xf.options.ap_disable_postbit_styles ? '' : ($xf.visitor.ap_postbit_style.pbit_disable? '' : ($user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '')) }}">{{ phrase('ap_activity') }}</dt>	
+		<xf:else />
+			<dt class="ap-activity">{{ phrase('ap_activity') }}</dt>
+		</xf:if>
+			<span title="{$activityTooltip}" class="block--progress">
+				<div class="progress-bar">
+					<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;">
+						<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
+					</div>
 				</div>
-			</div>
-		</span>	
-</dl>
+			</span>	
+	</dl>
+</xf:if>
 
-<!-- Longevity Meter //-->
-<xf:set var="$forum_start" value="{{$xf.time - $xf.simpleCache.getSet('apathy/ActLong').forum_start }}" />
-<xf:set var="$user_date" value="{{($xf.time - {$user.register_date})}}" />
-<xf:set var="$longevity_percentage" value="{{ ($user_date / $forum_start) * 100 }}" />
-<xf:set var="$longevityTooltip" value="{{ phrase('ap_actlong_user_has_been_registered') }} {{ floor($longevity_percentage|number(2)) }}% {{ phrase('ap_actlong_of_the_forums_lifetime') }}" />
-<dl class="pairs pairs--justified">
-	<dt class="ap-longevity" style="{{ $user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '' }} {{ $user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '' }}">{{ phrase('ap_longevity') }}</dt>
-		<span title="{$longevityTooltip}" class="block--progress">
-			<div class="progress-bar">
-				<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;">
-					<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
+<xf:if is="!$xf.options.ap_actlong_disable_longevity">
+	<!-- Longevity Meter //-->
+	<xf:set var="$forum_start" value="{{$xf.time - $xf.simpleCache.getSet('apathy/ActLong').forum_start }}" />
+	<xf:set var="$user_date" value="{{($xf.time - {$user.register_date})}}" />
+	<xf:set var="$longevity_percentage" value="{{ ($user_date / $forum_start) * 100 }}" />
+	<xf:set var="$longevityTooltip" value="{{ phrase('ap_actlong_user_has_been_registered') }} {{ floor($longevity_percentage|number(2)) }}% {{ phrase('ap_actlong_of_the_forums_lifetime') }}" />
+	<dl class="pairs pairs--justified">
+		<xf:if is="{$xf.addOns.{$addon}}">
+			<dt class="ap-longevity" style="{{ $xf.options.ap_disable_postbit_styles ? '' : ($xf.visitor.ap_postbit_style.pbit_disable ? '' : ($user.ap_postbit_style.pbit_color ? 'color:'.{$user.ap_postbit_style.pbit_color}.';' : '')) }}
+										   {{ $xf.options.ap_disable_postbit_styles ? '' : ($xf.visitor.ap_postbit_style.pbit_disable? '' : ($user.ap_postbit_style.pbit_shadow ? 'text-shadow: 0.05em 0 black,0 0.05em black,-0.05em 0 black,0 -0.05em black;' : '')) }}">{{ phrase('ap_longevity') }}</dt>
+		<xf:else />
+			<dt class="ap-longevity">{{ phrase('ap_longevity') }}</dt>
+		</xf:if>
+			<span title="{$longevityTooltip}" class="block--progress">
+				<div class="progress-bar">
+					<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;">
+						<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
+					</div>
 				</div>
-			</div>
-		</span>
-</dl>]]></template>
+			</span>
+	</dl>
+</xf:if>]]></template>
   <template type="public" title="ap_actlong_progress_bar.less" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[/* From Russ on Xenforo
    https://xenforo.com/community/threads/does-this-add-on-exist-profile-progression.168788/#post-1368520 */
 
