@@ -33,4 +33,9 @@ class Listener
 	{
 		$structure->columns['ap_activity_meter'] = ['type' => Entity::UINT, 'default' => NULL];
 	}
+	
+	public static function userSearcherOrders(\XF\Searcher\User $userSearcher, array &$sortOrders)
+	{
+		$sortOrders['ap_activity_meter'] = \XF::phrase('ap_activity');
+	}
 }
