@@ -10,6 +10,7 @@
   <phrase title="ap_lweek" version_id="1000470" version_string="1.0.4"><![CDATA[week]]></phrase>
   <phrase title="ap_week" version_id="1000170" version_string="1.0.1"><![CDATA[Week]]></phrase>
   <phrase title="cron_entry.ap_activity_reset" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[AP] Activity/Longevity Meters: Reset activity meters]]></phrase>
+  <phrase title="member_stat.ap_actlong_member_stat" version_id="1000570" version_string="1.0.5"><![CDATA[Highest activity]]></phrase>
   <phrase title="option.ap_actlong_disable_activity" version_id="1000470" version_string="1.0.4"><![CDATA[Disable activity meter]]></phrase>
   <phrase title="option.ap_actlong_disable_longevity" version_id="1000470" version_string="1.0.4"><![CDATA[Disable longevity meter]]></phrase>
   <phrase title="option.ap_actlong_exclude_nodes" version_id="1000110" version_string="1.0.1 Alpha"><![CDATA[Exclude nodes from activity count]]></phrase>

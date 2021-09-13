@@ -25,9 +25,8 @@
 		</xf:if>
 			<span title="{$activityTooltip}" class="block--progress">
 				<div class="progress-bar">
-					<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;">
-						<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
-					</div>
+					<div class="progress-width" style="width:{{ floor($activity_percentage) }}%;"></div>
+					<p class="progress-percent">{{ floor($activity_percentage) }}%</p>
 				</div>
 			</span>	
 	</dl>
@@ -48,20 +47,20 @@
 		</xf:if>
 			<span title="{$longevityTooltip}" class="block--progress">
 				<div class="progress-bar">
-					<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;">
-						<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
-					</div>
+					<div class="progress-width" style="width:{{ floor($longevity_percentage|number(2)) }}%;"></div>
+					<p class="progress-percent">{{ floor($longevity_percentage|number(2)) }}%</p>
 				</div>
 			</span>
 	</dl>
 </xf:if>]]></template>
-  <template type="public" title="ap_actlong_progress_bar.less" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[/* From Russ on Xenforo
+  <template type="public" title="ap_actlong_progress_bar.less" version_id="1000470" version_string="1.0.4"><![CDATA[/* From Russ on Xenforo
    https://xenforo.com/community/threads/does-this-add-on-exist-profile-progression.168788/#post-1368520 */
 
 .block--progress
 {
     .progress-bar
     {
+		position: relative;
         margin-bottom: @xf-paddingLarge;
         width:100%;
         height:30px;
@@ -77,6 +76,7 @@
         background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.125) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.125) 50%, rgba(255, 255, 255, 0.125) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
         background-size: 35px 35px;
         background-color: {{ property('ap_progress_bar_color') }} !important;
+		text-align: center;
     }
     .progress-percent
     {
