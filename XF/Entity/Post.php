@@ -56,5 +56,7 @@ class Post extends XFCP_Post
 				$this->User->fastUpdate('ap_activity_meter', max(0, $this->User->ap_activity_meter + $amount));
 			}
 		}
+		
+		return $parent;
 	}
 }
